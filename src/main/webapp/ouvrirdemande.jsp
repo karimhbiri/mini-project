@@ -219,7 +219,6 @@
 					made with Java EE by Oussema and Karim.
 					</div>
 				</div>
-			
 			</div>
 		</div>
 	  </footer>
