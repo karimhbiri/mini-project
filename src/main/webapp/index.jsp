@@ -29,7 +29,7 @@
   <link id="pagestyle" href="assets/css/material-dashboard.css?v=3.0.2" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show  bg-gray-200">
+<body class="g-sidenav-show  bg-gray-200 dark-version">
 <c:set var = "role" value = "${sessionScope.role}"/>
 <c:set var = "user" value = "${sessionScope.currentUser.getPrenom()}"/>
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
@@ -102,7 +102,8 @@
   </aside>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl position-sticky blur shadow-blur mt-4 left-auto top-1 z-index-sticky" id="navbarBlur" navbar-scroll="true">
+    <nav style="box-shadow: inset 0 0px 1px 1px rgb(254 254 254 / 90%), 0 20px 27px 0 rgb(0 0 0 / 5%) !important;backdrop-filter: saturate(200%) blur(30px);
+    background-color: rgba(255, 255, 255, 0.8) !important;" class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl position-sticky blur shadow-blur mt-4 left-auto top-1 z-index-sticky" id="navbarBlur" navbar-scroll="true">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -208,7 +209,7 @@
         <!-- Sidenav Type -->
         <div class="mt-3">
           <h6 class="mb-0">Type de menu</h6>
-          <p class="text-sm">Choisir votre type de menu prÃ©fÃ©rÃ©.</p>
+          <p class="text-sm">Choisir votre type de menu préféré.</p>
         </div>
         <div class="d-flex">
           <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
@@ -225,7 +226,7 @@
         </div>
         <hr class="horizontal dark my-3">
         <div class="mt-2 d-flex">
-          <h6 class="mb-0">Clair / FoncÃ©</h6>
+          <h6 class="mb-0">Clair / Foncé</h6>
           <div class="form-check form-switch ps-0 ms-auto my-auto">
             <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
           </div>
@@ -241,252 +242,252 @@
   <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="assets/js/plugins/chartjs.min.js"></script>
   <script>
-    var ctx = document.getElementById("chart-bars").getContext("2d");
+//var ctx = document.getElementById("chart-bars").getContext("2d");
 
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["M", "T", "W", "T", "F", "S", "S"],
-        datasets: [{
-          label: "Sales",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "rgba(255, 255, 255, .8)",
-          data: [50, 20, 10, 22, 50, 10, 40],
-          maxBarThickness: 6
-        }, ],
+  // new Chart(ctx, {
+  //   type: "bar",
+  //   data: {
+  //     labels: ["M", "T", "W", "T", "F", "S", "S"],
+  //     datasets: [{
+  //       label: "Sales",
+  //       tension: 0.4,
+  //       borderWidth: 0,
+  //       borderRadius: 4,
+  //       borderSkipped: false,
+  //       backgroundColor: "pink",
+  //       data: [50, 20, 10, 22, 50, 10, 40],
+  //       maxBarThickness: 6
+  //     }, ],
+  //   },
+  //   options: {
+  //     responsive: true,
+  //     maintainAspectRatio: false,
+  //     plugins: {
+  //       legend: {
+  //         display: false,
+  //       }
+  //     },
+  //     interaction: {
+  //       intersect: false,
+  //       mode: 'index',
+  //     },
+  //     scales: {
+  //       y: {
+  //         grid: {
+  //           drawBorder: false,
+  //           display: true,
+  //           drawOnChartArea: true,
+  //           drawTicks: false,
+  //           borderDash: [5, 5],
+  //           color: 'rgba(255, 255, 255, .2)'
+  //         },
+  //         ticks: {
+  //           suggestedMin: 0,
+  //           suggestedMax: 500,
+  //           beginAtZero: true,
+  //           padding: 10,
+  //           font: {
+  //             size: 14,
+  //             weight: 300,
+  //             family: "Roboto",
+  //             style: 'normal',
+  //             lineHeight: 2
+  //           },
+  //           color: "#fff"
+  //         },
+  //       },
+  //       x: {
+  //         grid: {
+  //           drawBorder: false,
+  //           display: true,
+  //           drawOnChartArea: true,
+  //           drawTicks: false,
+  //           borderDash: [5, 5],
+  //           color: 'rgba(255, 255, 255, .2)'
+  //         },
+  //         ticks: {
+  //           display: true,
+  //           color: '#f8f9fa',
+  //           padding: 10,
+  //           font: {
+  //             size: 14,
+  //             weight: 300,
+  //             family: "Roboto",
+  //             style: 'normal',
+  //             lineHeight: 2
+  //           },
+  //         }
+  //       },
+  //     },
+  //   },
+  // });
+
+
+  // var ctx2 = document.getElementById("chart-line").getContext("2d");
+
+  // new Chart(ctx2, {
+  //   type: "line",
+  //   data: {
+  //     labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+  //     datasets: [{
+  //       label: "Mobile apps",
+  //       tension: 0,
+  //       borderWidth: 0,
+  //       pointRadius: 5,
+  //       pointBackgroundColor: "pink",
+  //       pointBorderColor: "transparent",
+  //       borderColor: "brown",
+  //       borderColor: "biege",
+  //       borderWidth: 4,
+  //       backgroundColor: "transparent",
+  //       fill: true,
+  //       data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+  //       maxBarThickness: 6
+
+  //     }],
+  //   },
+  //   options: {
+  //     responsive: true,
+  //     maintainAspectRatio: false,
+  //     plugins: {
+  //       legend: {
+  //         display: false,
+  //       }
+  //     },
+  //     interaction: {
+  //       intersect: false,
+  //       mode: 'index',
+  //     },
+  //     scales: {
+  //       y: {
+  //         grid: {
+  //           drawBorder: false,
+  //           display: true,
+  //           drawOnChartArea: true,
+  //           drawTicks: false,
+  //           borderDash: [5, 5],
+  //           color: 'yellow'
+  //         },
+  //         ticks: {
+  //           display: true,
+  //           color: '#f8f9fa',
+  //           padding: 10,
+  //           font: {
+  //             size: 14,
+  //             weight: 300,
+  //             family: "Roboto",
+  //             style: 'normal',
+  //             lineHeight: 2
+  //           },
+  //         }
+  //       },
+  //       x: {
+  //         grid: {
+  //           drawBorder: false,
+  //           display: false,
+  //           drawOnChartArea: false,
+  //           drawTicks: false,
+  //           borderDash: [5, 5]
+  //         },
+  //         ticks: {
+  //           display: true,
+  //           color: '#f8f9fa',
+  //           padding: 10,
+  //           font: {
+  //             size: 14,
+  //             weight: 300,
+  //             family: "Roboto",
+  //             style: 'normal',
+  //             lineHeight: 2
+  //           },
+  //         }
+  //       },
+  //     },
+  //   },
+  // });
+
+  var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+
+  new Chart(ctx3, {
+    type: "line",
+    data: {
+      labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      datasets: [{
+        label: "Mobile apps",
+        tension: 0,
+        borderWidth: 0,
+        pointRadius: 5,
+        pointBackgroundColor: "pink",
+        pointBorderColor: "transparent",
+        borderColor: "pink",
+        borderWidth: 4,
+        backgroundColor: "transparent",
+        fill: true,
+        data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+        maxBarThickness: 6
+
+      }],
+    },
+    options: {
+      bezierCurve: false,
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false,
+        }
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
+      interaction: {
+        intersect: false,
+        mode: 'index',
+      },
+      scales: {
+        y: {
+          grid: {
+            drawBorder: false,
+            display: true,
+            drawOnChartArea: true,
+            drawTicks: false,
+            borderDash: [5, 5],
+            color: 'rgba(255, 255, 255, .2)'
+          },
+          ticks: {
+            display: true,
+            padding: 10,
+            color: '#f8f9fa',
+            font: {
+              size: 14,
+              weight: 300,
+              family: "Roboto",
+              style: 'normal',
+              lineHeight: 2
+            },
           }
         },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-
-
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0,
-          borderWidth: 0,
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(255, 255, 255, .8)",
-          pointBorderColor: "transparent",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderWidth: 4,
-          backgroundColor: "transparent",
-          fill: true,
-          data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
+        x: {
+          grid: {
+            drawBorder: false,
             display: false,
+            drawOnChartArea: false,
+            drawTicks: false,
+            borderDash: [5, 5]
+          },
+          ticks: {
+            display: true,
+            color: '#f8f9fa',
+            padding: 10,
+            font: {
+              size: 14,
+              weight: 300,
+              family: "Roboto",
+              style: 'normal',
+              lineHeight: 2
+            },
           }
         },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
       },
-    });
-
-    var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
-
-    new Chart(ctx3, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0,
-          borderWidth: 0,
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(255, 255, 255, .8)",
-          pointBorderColor: "transparent",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderWidth: 4,
-          backgroundColor: "transparent",
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
-
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
-    
+    },
+  });
   </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
