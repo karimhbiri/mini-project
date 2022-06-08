@@ -149,6 +149,11 @@
                 	<c:if test="${not empty role}">
 		      			<span class="d-sm-inline d-none"><c:out value = "${user}"/></span>
 		      		</c:if>
+		      		<c:if test="${role == 'Agent de tirage'}">
+		      			<%
+							response.sendRedirect("index.jsp");
+						%>
+		      		</c:if>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

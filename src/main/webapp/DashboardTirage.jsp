@@ -87,6 +87,7 @@
        </div>
      </div>
 </body>
+  <script src="assets/js/plugins/chartjs.min.js"></script>
 <script>
 //var ctx = document.getElementById("chart-bars").getContext("2d");
 
