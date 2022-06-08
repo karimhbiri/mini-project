@@ -39,7 +39,7 @@
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
-    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse  w-auto  max-height-vh-100" style="height:100%!important;" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link text-white active bg-gradient-primary" href="pages/dashboard.html">
@@ -51,7 +51,7 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link text-white " href="sign-up.html">
+          <a class="nav-link text-white " href="sign-up.jsp">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">assignment</i>
             </div>
@@ -118,14 +118,18 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-      container where we should include jsp file components
       <br>
-<%@
-	include file="NewFile.jsp" 
-	
-%>
-
-
+      <c:if test="${role == 'Enseignant' }">
+      	<%@
+			include file="DashboardEnseignant.jsp" 
+		%>
+      </c:if>
+      
+      <c:if test="${role == 'Agent de tirage' }">
+      	<%@
+			include file="DashboardTirage.jsp" 
+		%>
+      </c:if>
       <footer class="footer py-4">
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">

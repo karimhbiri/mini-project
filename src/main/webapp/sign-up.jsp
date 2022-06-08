@@ -180,6 +180,13 @@
                       <label class="form-label">Prenom</label>
                       <input type="text" id="prenom" name="prenom" class="form-control" autocomplete="off">
                     </div>
+                    <div class="input-group input-group-static mb-3">
+				     <label for="exampleFormControlSelect1" class="ms-0">Role</label>
+				     <select class="form-control" name="role" id="exampleFormControlSelect1">
+				       <option>Agent de tirage</option>
+				       <option>Enseignant</option>
+				     </select>
+				   </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label">Email</label>
                       <input type="email" id="email" name="email" class="form-control" autocomplete="off">

@@ -46,7 +46,7 @@ public class InscriptionController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Utilisateur u = new Utilisateur(0,request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("email"), request.getParameter("pwd"),"admin");
+		Utilisateur u = new Utilisateur(0,request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("email"), request.getParameter("pwd"),request.getParameter("role"));
 		ServletContext application = getServletContext();
 		List<Utilisateur> liste = (List<Utilisateur>) application.getAttribute("listeUsers");
 		if (liste == null) {

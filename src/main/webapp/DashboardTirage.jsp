@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	Dashboard agent de tirage
 </body>
 </html>
