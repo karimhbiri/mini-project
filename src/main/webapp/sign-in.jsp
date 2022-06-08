@@ -40,21 +40,28 @@
                 </div>
               </div>
               <div class="card-body">
-              	abc
-              	<c:set var="enablebtnRelatedDocs" value="${erreur}" scope="session"/>
-				<c:out value="${sessionScope.enablebtnRelatedDocs }"/>
-              	<c:set var = "role" value = "${applicationScope.userFound}"/>
-			    <c:out value = "${role}"/>
-
-	
                 <form role="form" class="text-start" action="AuthController" method="post">
-                  <div class="input-group input-group-outline my-3">
+                  <div class="input-group input-group-outline my-3" style="position:relative; margin-bottom:20px!important;">
                     <label class="form-label">Email</label>
                     <input type="email" name="email" class="form-control">
+                    <div class="error-email" style="
+                    		display: none;
+						    position: absolute;
+						    font-size: 12px;
+						    bottom: -20px;
+						    left: 16px;
+						    color: #fb2a2a;"> verifiez votre email svp! </div>
                   </div>
-                  <div class="input-group input-group-outline mb-3">
+                  <div class="input-group input-group-outline mb-3" style="position:relative; margin-bottom:20px!important;">
                     <label class="form-label">Mot de passe</label>
                     <input type="password" name="pwd" class="form-control">
+                    <div class="error-pwd" style="
+                    		display: none;
+						    position: absolute;
+						    font-size: 12px;
+						    bottom: -20px;
+						    left: 16px;
+						    color: #fb2a2a;"> verifiez votre mot de passe svp! </div>
                   </div>
                   <div class="form-check form-switch d-flex align-items-center mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe">
@@ -87,6 +94,15 @@
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if(urlParams.has('error')) {
+    	let errorEmail = document.querySelector('.error-email');
+    	let errorPwd = document.querySelector('.error-pwd');
+    	errorEmail.style.display = "block";
+    	errorPwd.style.display = "block";
     }
   </script>
   <!-- Github buttons -->

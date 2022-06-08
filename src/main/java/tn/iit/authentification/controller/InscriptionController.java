@@ -57,7 +57,7 @@ public class InscriptionController extends HttpServlet {
 
 		request.getSession().setAttribute("listeUsers",liste);
 
-		response.sendRedirect("sign-in.jsp");
+		response.sendRedirect("sign-in.jsp?success=success");
 		try {
 			UtilisateurDAO.saveUser(u);
 		} catch (Exception e) {

@@ -76,7 +76,7 @@ public class AuthController extends HttpServlet {
 			{
 				application.setAttribute("userFound",trouve);
 				session.setAttribute("erreur", "Erreur d'authentification !!!");
-				response.sendRedirect("sign-in.jsp");
+				response.sendRedirect("sign-in.jsp?error=notfound");
 			}
 		}
 		else {

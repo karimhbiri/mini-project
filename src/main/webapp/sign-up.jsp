@@ -196,7 +196,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
                     Avez-vous déjà  un compte?
-                    <a href="sign-in.html" class="text-primary text-gradient font-weight-bold">Se connecter</a>
+                    <a href="sign-in.jsp" class="text-primary text-gradient font-weight-bold">Se connecter</a>
                   </p>
                 </div>
               </div>
