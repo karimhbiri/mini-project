@@ -31,7 +31,7 @@ public class Disconnect extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.invalidate();
-		response.sendRedirect("authentification.jsp");
+		response.sendRedirect("sign-in.jsp");
 	}
 
 	/**
@@ -42,6 +42,7 @@ public class Disconnect extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+
 	}
 
 }
