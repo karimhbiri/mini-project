@@ -44,50 +44,67 @@ public class AuthController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean trouve = false;
+		String role = "";
 		Utilisateur currentUser = null;
-		String login = request.getParameter("login");
-		String pwd = request.getParameter("password");
+		String login = request.getParameter("email");
+		String pwd = request.getParameter("pwd");	
 		ServletContext application = getServletContext();
 		HttpSession session = request.getSession();
-		/*List<Utilisateur> liste = (List<Utilisateur>) application.getAttribute("listeUsers");
+
+		List<Utilisateur> liste = UtilisateurDAO.getAllUser();
+		System.out.println("####################################################");
+		System.out.println(liste != null);
 		if (liste != null) {
 			for (Utilisateur utilisateur : liste) {
 				if(utilisateur.getLogin().equals(login) && utilisateur.getPwd().equals(pwd)) {
+					System.out.println("_-_-_-_-_-_-_-_-_-_-_-_-__-_-_-_-_-_-_-_-_-_-_-_-_-");
+					System.out.println(utilisateur.getNom());
 					trouve = true;
+					role = utilisateur.getRole();
 					currentUser = utilisateur;
 					break;
 				}
 			}
+			System.out.println("if found");
 			if(trouve) {
+				application.setAttribute("userFound",trouve);
 				session.setAttribute("currentUser", currentUser);
-				response.sendRedirect("bienvenue.jsp");
+				session.setAttribute("role", role);
+				response.sendRedirect("index.jsp");
 			}
 			else
 			{
-				request.setAttribute("erreur", "Erreur d'authentification !!!");
-				getServletContext().getRequestDispatcher("/authentification.jsp").forward(request, response);
+				application.setAttribute("userFound",trouve);
+				session.setAttribute("erreur", "Erreur d'authentification !!!");
+				response.sendRedirect("sign-in.jsp");
 			}
 		}
 		else {
 			request.setAttribute("erreur", "Aucun utilisateur n'est inscrit !!!");
-			getServletContext().getRequestDispatcher("/authentification.jsp").forward(request, response);
-		}*/
-		try {
+			getServletContext().getRequestDispatcher("/sign-up.jsp").forward(request, response);
+		}
+		
+		/*try {
+			System.out.println(login);
+			System.out.println(pwd);
 			Utilisateur u = UtilisateurDAO.findByLoginPwd(login, pwd);
+			System.out.println("test connection");
 			if(u != null) {
 				session.setAttribute("currentUser", u);
-				response.sendRedirect("bienvenue.jsp");
+				response.sendRedirect("index.jsp");
 				
 			}else {
+				response.sendRedirect("index.jsp");
 				request.setAttribute("erreur", "Erreur d'authentification !!!");
 				getServletContext().getRequestDispatcher("/authentification.jsp").forward(request, response);
 				
 			}
-		} catch (SQLException e) {
+		} catch (Exception e) {
+			System.out.println("catch");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		*/
 		
 	}
 
