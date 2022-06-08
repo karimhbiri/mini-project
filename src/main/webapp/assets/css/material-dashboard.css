@@ -3586,13 +3586,13 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #000;
-  background-color: #e91e63;
+  background-color: #4c48e1;
   border-color: #e91e63;
 }
 
 .btn-primary:hover {
   color: #000;
-  background-color: #4085ec;
+  background-color: #b7b5e9;
   border-color: #eb3573;
 }
 
