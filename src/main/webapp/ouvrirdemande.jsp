@@ -187,6 +187,21 @@
       <div class="row">
 		  	<div style="border-right: 1px solid #8f8f8f;" class="col-14 col-md-9">
 		  	
+			  	<h6>Demande n°
+					<small class="text-muted">001</small>
+				</h6>
+				<p>
+				 demande numéro <small class="text-muted">001</small> créée par l'enseignant(e) <strong>Nom enseignant</strong> pour la date désiré <strong> 01 Juin 2022 </strong> avant 12h00.
+				</p>
+			  	<p>
+			  		Vous devez imprimer les documents ci-joint pour <strong>28 personnes.</strong>
+			  	</p>
+			  	
+			  	<a href="fichier.pdf">Fichier.pdf</a>
+			  	<a href="tp_1.pdf">TP_1.pdf</a>
+		  	
+		  		
+		  	
 			</div>
 		  	<div class="col-4 col-md-3">
 				<h5>
