@@ -104,6 +104,9 @@
     	errorEmail.style.display = "block";
     	errorPwd.style.display = "block";
     }
+    if(urlParams.has('success')) {
+		
+    }
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
