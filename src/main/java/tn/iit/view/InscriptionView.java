@@ -48,7 +48,7 @@ public class InscriptionView extends HttpServlet {
 				+ "				<td><input name=\"nom\"></td>\r\n"
 				+ "			</tr>\r\n"
 				+ "			<tr>\r\n"
-				+ "				<td>Prï¿½nom : </td>\r\n"
+				+ "				<td>Prénom : </td>\r\n"
 				+ "				<td><input name=\"prenom\"></td>\r\n"
 				+ "			</tr>\r\n"
 				

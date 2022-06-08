@@ -2,7 +2,10 @@ package tn.iit.authentification.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,26 +46,24 @@ public class InscriptionController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//	Utilisateur u = new Utilisateur(0,request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("login"), request.getParameter("password"));
-//		ServletContext application = getServletContext();
-		HttpSession session = request.getSession();
-		Utilisateur u = (Utilisateur) session.getAttribute("currentUser");
-//		List<Utilisateur> liste = (List<Utilisateur>) application.getAttribute("listeUsers");
-//		if (liste == null) {
-//			liste = new ArrayList<Utilisateur>();
-//		}
-//		liste.add(u);
-		session.setAttribute("currentUser", u);
-//		application.setAttribute("listeUsers", liste);
+		Utilisateur u = new Utilisateur(0,request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("email"), request.getParameter("pwd"),"admin");
+		ServletContext application = getServletContext();
+		List<Utilisateur> liste = (List<Utilisateur>) application.getAttribute("listeUsers");
+		if (liste == null) {
+			liste = new ArrayList<Utilisateur>();
+		}
+		liste.add(u);
+		request.setAttribute("listeUsers", liste);
+
+		request.getSession().setAttribute("listeUsers",liste);
+
+		response.sendRedirect("sign-in.jsp");
 		try {
-			UtilisateurDAO.save(u);
-		} catch (SQLException e) {
+			UtilisateurDAO.saveUser(u);
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.sendRedirect("bienvenue.jsp");
-		
-		
 	}
 
 }
