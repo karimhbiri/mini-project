@@ -188,7 +188,7 @@
 				  Formulaire
 				  <small class="text-muted">Créer une demande de tirage!</small>
 				</h3>
-				<form action="MatiereController" method="post">
+				<form action="DemandeTirageController" method="post">
 					<div class="input-group input-group-static mb-4">
 				      <label for="exampleFormControlSelect1" class="ms-0">Pour la matiere:</label>
 				      <select style="color: #d1d2d7;" class="form-control" name="nomMatiere" id="exampleFormControlSelect1">

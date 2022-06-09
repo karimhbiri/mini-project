@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="tn.iit.authentification.model.*"%>
+<%@page import="tn.iit.authentification.controller.*"%>
+<%@page import="tn.iit.dao.*"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+dskfhjsdkjfksd
+<%
+	List < DemandeTirage > liste = DemandeTirageDAO.getAllDemandeTirage();
+
+%>	
+
+	
 	<div style="color: #efefef;" class="alert alert-secondary" role="alert">
 		<strong>Mes demandes!</strong> suivez vos demandes de tirage!
 	</div>

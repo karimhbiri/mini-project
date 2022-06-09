@@ -1,6 +1,8 @@
 package tn.iit.authentification.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.sql.Time;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -11,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import tn.iit.authentification.model.DemandeTirage;
 import tn.iit.authentification.model.Utilisateur;
+import tn.iit.dao.DemandeTirageDAO;
+import tn.iit.dao.TestDAO;
 
 /**
  * Servlet implementation class DemandeTirageController
@@ -41,8 +45,20 @@ public class DemandeTirageController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// work in progress ya karim ken theb kamelha ena bech nor9od haha
-		// DemandeTirage demandeTirage = new DemandeTirage(0,request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("email"), request.getParameter("pwd"),request.getParameter("role"));
+		//int id, String enseignantNom, String matiere, int nbrcopie, Date date, Time time, String filePath, String status
+		DemandeTirage demandeTirage = new DemandeTirage(0,request.getParameter("nomEnseignant"), request.getParameter("nomMatiere"),
+				request.getParameter("nbrCopie"), request.getParameter("date"),request.getParameter("heure"),
+				request.getParameter("file"),"en attente");
+
 		ServletContext application = getServletContext();
+
+		try {
+			DemandeTirageDAO.saveDemandeTirage(demandeTirage);
+			response.sendRedirect("index.jsp");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

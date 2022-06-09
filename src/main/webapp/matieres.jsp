@@ -170,7 +170,7 @@
 				  Formulaire
 				  <small class="text-muted">Ajouter vos matieres!</small>
 				</h3>
-				<form action="MatiereController" method="post">
+				<form action="TestController" method="post">
 					<div class="input-group input-group-outline my-3">
 				      <label class="form-label">Nom de la matiere</label>
 				      <input type="text" name="nomMatiere" class="form-control">

@@ -1,8 +1,5 @@
 package tn.iit.authentification.model;
 
-import java.sql.Date;
-import java.sql.Time;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,17 +13,14 @@ public class DemandeTirage {
 	private int id;
 	private String enseignantNom = "";
 	private String matiere = "";
-	private int nbrcopie;
-	private Date date = null;
-	private Time time = null;
+	private String nbrcopie;
+	private String date = null;
+	private String time = null;
 	private String filePath = "";
 	private String status = "";
 
-	public DemandeTirage() {
-		super();
-	}
-
-	public DemandeTirage(int id, String enseignantNom, String matiere, int nbrcopie, Date date, Time time, String filePath, String status) {
+	public DemandeTirage(int id, String enseignantNom, String matiere, String nbrcopie, String date, String time,
+			String filePath, String status) {
 		super();
 		this.id = id;
 		this.setEnseignantNom(enseignantNom);
@@ -62,27 +56,27 @@ public class DemandeTirage {
 		this.matiere = matiere;
 	}
 
-	public int getNbrcopie() {
+	public String getNbrcopie() {
 		return nbrcopie;
 	}
 
-	public void setNbrcopie(int nbrcopie) {
+	public void setNbrcopie(String nbrcopie) {
 		this.nbrcopie = nbrcopie;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public Time getTime() {
+	public String getTime() {
 		return time;
 	}
 
-	public void setTime(Time time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
@@ -101,7 +95,5 @@ public class DemandeTirage {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
-
 
 }

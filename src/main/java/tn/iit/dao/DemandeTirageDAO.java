@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import tn.iit.authentification.model.DemandeTirage;
+import tn.iit.authentification.model.Utilisateur;
 import tn.iit.util.HibernateUtil;
 
 /**
@@ -20,7 +21,7 @@ public class DemandeTirageDAO {
      * Save DemandeTirage
      * @param DemandeTirage
      */
-    public void saveDemandeTirage(DemandeTirage DemandeTirage) {
+    public static void saveDemandeTirage(DemandeTirage DemandeTirage) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
@@ -112,18 +113,18 @@ public class DemandeTirageDAO {
     }
 
     /**
-     * Get all DemandeTirages
+     * Get all Users
      * @return
      */
     @SuppressWarnings("unchecked")
-    public List < DemandeTirage > getAllDemandeTirage() {
+    public static List < DemandeTirage > getAllDemandeTirage() {
 
         Transaction transaction = null;
         List < DemandeTirage > listOfDemandeTirage = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
-            // get an DemandeTirage object
+            // get an user object
 
             listOfDemandeTirage = session.createQuery("from DemandeTirage").getResultList();
 

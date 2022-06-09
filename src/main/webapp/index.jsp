@@ -129,7 +129,7 @@
 						<%
 							session.removeAttribute("role");
 							session.removeAttribute("currentUser");
-							response.sendRedirect("/Authetification/Disconnect");
+							response.sendRedirect("/Jee/Disconnect");
 						%>
 		      		</c:if>
                 	<c:if test="${not empty role}">

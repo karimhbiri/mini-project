@@ -34,7 +34,8 @@ public class HibernateUtil {
 
 	    configuration.setProperties(settings);
 	    configuration.addAnnotatedClass(Utilisateur.class);
-
+	    configuration.addAnnotatedClass(DemandeTirage.class);
+	    configuration.addAnnotatedClass(Test.class);
 	    ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 	      .applySettings(configuration.getProperties()).build();
 	    System.out.println("Hibernate Java Config serviceRegistry created");
