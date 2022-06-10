@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="tn.iit.authentification.model.*"%>
+     <%@page import="tn.iit.authentification.*"%>
+       <%@page import="tn.iit.dao.*"%>
+<%@page import="java.util.*"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +12,21 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%
+									DemandeTirageDAO metierDao = new DemandeTirageDAO();
+									List<DemandeTirage> lst = metierDao.getAllDemandeTirage();
+								//	for (int i = 0; i < lst.size(); i++) {
+										UtilisateurDAO utilisateur = new UtilisateurDAO();
+									List<Utilisateur> lst_utilisateur = UtilisateurDAO.getAllUser();
+									int nb = 0  ; 
+											for (int i = 0; i < lst_utilisateur.size(); i++) {
+												if (lst_utilisateur.get(i).getRole().equals("Enseignant")){
+													System.out.println("yes");
+													nb++ ; 
+												}
+											}
+											
+									%>
 	<div class="row">
        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
          <div class="card">
@@ -16,7 +36,7 @@
              </div>
              <div class="text-end pt-1">
                <p style="width: 70%;margin-left: 30%;" class="text-sm mb-0 text-capitalize">Nombre de demande d'aujourd'hui</p>
-               <h4 class="mb-0">3</h4>
+               <h4 class="mb-0"><%=lst.size()%></h4>
              </div>
            </div>
            <hr class="dark horizontal my-0">
@@ -50,7 +70,7 @@
              </div>
              <div class="text-end pt-1">
                <p style="width: 70%;margin-left: 30%;" class="text-sm mb-0 text-capitalize">Nouvel(le) enseignant(e)</p>
-               <h4 class="mb-0">0</h4>
+               <h4 class="mb-0"><%=nb%></h4>
              </div>
            </div>
            <hr class="dark horizontal my-0">

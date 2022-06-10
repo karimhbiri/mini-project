@@ -118,22 +118,22 @@ public class DemandeTirageDAO {
      */
     @SuppressWarnings("unchecked")
     public static List < DemandeTirage > getAllDemandeTirage() {
-
+    	
         Transaction transaction = null;
         List < DemandeTirage > listOfDemandeTirage = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
-            transaction = session.beginTransaction();
+           // transaction = session.beginTransaction();
             // get an user object
-
-            listOfDemandeTirage = session.createQuery("from DemandeTirage").getResultList();
-
+            System.out.println("demande de 128");
+            listOfDemandeTirage = session.createQuery("from DemandeTirage dt").getResultList();
+  
             // commit transaction
-            transaction.commit();
+           // transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
+//            if (transaction != null) {
+//                transaction.rollback();
+//            }
             e.printStackTrace();
         }
         return listOfDemandeTirage;

@@ -1,5 +1,6 @@
 package tn.iit.authentification.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -7,16 +8,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "DemandeTirage")
 public class DemandeTirage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private int id;
+	@Column(name = "enseignantNom")
 	private String enseignantNom = "";
+	@Column(name = "matiere")
 	private String matiere = "";
+	@Column(name = "nbrcopie")
 	private String nbrcopie;
+	@Column(name = "date")
 	private String date = null;
+	@Column(name = "time")
 	private String time = null;
+	@Column(name = "filePath")
 	private String filePath = "";
+	@Column(name = "status")
 	private String status = "";
 
 	public DemandeTirage(int id, String enseignantNom, String matiere, String nbrcopie, String date, String time,
@@ -30,6 +40,9 @@ public class DemandeTirage {
 		this.setTime(time);
 		this.setFilePath(filePath);
 		this.setStatus(status);
+	}
+
+	public DemandeTirage() {
 	}
 
 	public int getId() {

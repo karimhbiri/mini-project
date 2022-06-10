@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="tn.iit.authentification.model.*"%>
-<%@page import="java.util.ArrayList"%>
-
+<%@page import="java.util.*"%>
+<%@page import="tn.iit.dao.*"%>
+<%@page import="tn.iit.authentification.controller.*"%>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 
 
@@ -192,9 +193,18 @@
 					<div class="input-group input-group-static mb-4">
 				      <label for="exampleFormControlSelect1" class="ms-0">Pour la matiere:</label>
 				      <select style="color: #d1d2d7;" class="form-control" name="nomMatiere" id="exampleFormControlSelect1">
-					       <option value="Anglais">Anglais</option>
-					       <option value="math">Math</option>
-					       <option>Physique</option>
+					       <%
+					       		MetierDAO metierDAO = new MetierDAO();
+					       		List <Metier> listee = metierDAO.getAllMetier();
+					       		
+					       		for (int i = 0; i < listee.size(); i++) {
+							%>
+							
+							<option value="<%=listee.get(i).getName()%>"><%=listee.get(i).getName()%></option>
+							
+							<% 
+								} 
+							%>
 				      </select>
 				    </div>
 				    <div class="input-group input-group-outline my-3">

@@ -71,8 +71,7 @@ public class MatiereController extends HttpServlet {
 		System.out.println("");
 		MetierDAO metierDAO = new MetierDAO();
 		metierDAO.saveMetier(metier) ; 
-		
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("matieres.jsp");
 
 		
 	}
