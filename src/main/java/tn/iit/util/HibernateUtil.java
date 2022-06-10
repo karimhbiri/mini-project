@@ -23,7 +23,7 @@ public class HibernateUtil {
 	    settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
 	    settings.put(Environment.URL, "jdbc:mysql://localhost:3306/jeeminiproject?useSSL=false");
 	    settings.put(Environment.USER, "root");
-	    settings.put(Environment.PASS, "azerty123");
+	    settings.put(Environment.PASS, "");
 	    settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
 
 	    settings.put(Environment.SHOW_SQL, "true");
@@ -36,6 +36,8 @@ public class HibernateUtil {
 	    configuration.addAnnotatedClass(Utilisateur.class);
 	    configuration.addAnnotatedClass(DemandeTirage.class);
 	    configuration.addAnnotatedClass(Test.class);
+	    configuration.addAnnotatedClass(Metier.class);
+
 	    ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
 	      .applySettings(configuration.getProperties()).build();
 	    System.out.println("Hibernate Java Config serviceRegistry created");
